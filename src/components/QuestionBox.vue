@@ -1,11 +1,11 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron>
-      <template slot="lead">{{ currentQuestion.question }}</template>
+      <span slot="lead" v-html="'<span>' + currentQuestion.question + '</span>'"></span>
       <hr class="my-4" />
       <b-list-group>
         <b-list-group-item
-          v-for="(answer,index) in shuffledAnswers "
+          v-for="(answer,index) in shuffledAnswers"
           :key="index"
           @click="selectAnswer(index)"
           :class="answerClass(index)"
